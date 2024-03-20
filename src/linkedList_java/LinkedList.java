@@ -93,7 +93,7 @@ public class LinkedList {
         return temp;
     }
     /**
-     * Remove and return the last node from the linked list.
+     * Remove and return the first node from the linked list.
      * @return The removed node or null if the list is empty.
      */
     Node removeFirst(){
@@ -106,6 +106,22 @@ public class LinkedList {
         length--;
         if (length==0){
             tail = null;
+        }
+        return temp;
+    }
+
+    /**
+     * Retrieve the node at the specified index in the linked list.
+     * @param index The index of the node to retrieve.
+     * @return The node at the specified index, or null if the index is out of bounds.
+     */
+    Node get(int index) {
+        if (index < 0 || index >= length) {
+            return null;
+        }
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
         }
         return temp;
     }

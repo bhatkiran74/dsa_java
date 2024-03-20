@@ -13,5 +13,6 @@ public class Demo {
         list.printList();
         list.append(10);
         list.printList();
+        System.out.println(list.get(2).value);
     }
 }
