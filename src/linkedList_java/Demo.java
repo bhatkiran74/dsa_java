@@ -9,5 +9,7 @@ public class Demo {
         list.append(8);
         list.append(9);
         list.printList();
+        list.removeLast();
+        list.printList();
     }
 }
