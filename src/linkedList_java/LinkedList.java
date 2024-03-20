@@ -36,7 +36,17 @@ public class LinkedList {
     }
 
 
-
+    void prepend(int value){
+        Node newNode = new Node(value);
+        if(length ==0){
+            head = newNode;
+            tail = newNode;
+        }else {
+            newNode.next = head;
+            head = newNode;
+        }
+        length++;
+    }
 
     Node removeLast(){
         if(length==0)
