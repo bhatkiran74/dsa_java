@@ -14,5 +14,8 @@ public class Demo {
         list.append(10);
         list.printList();
         System.out.println(list.get(2).value);
+        list.printList();
+        list.set(2,11);
+        list.printList();
     }
 }

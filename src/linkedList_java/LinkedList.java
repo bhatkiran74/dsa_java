@@ -126,6 +126,15 @@ public class LinkedList {
         return temp;
     }
 
+    boolean set(int index, int value){
+        Node temp = get(index);
+        if(temp !=null){
+            temp.value = value;
+            return true;
+        }
+        return false;
+    }
+
     /**
      * Print all the values stored in the nodes of the linked list.
      */
