@@ -92,6 +92,23 @@ public class LinkedList {
         }
         return temp;
     }
+    /**
+     * Remove and return the last node from the linked list.
+     * @return The removed node or null if the list is empty.
+     */
+    Node removeFirst(){
+        Node temp = head;
+        if (length==0){
+            return null;
+        }
+        head = head.next;
+        temp.next=null;
+        length--;
+        if (length==0){
+            tail = null;
+        }
+        return temp;
+    }
 
     /**
      * Print all the values stored in the nodes of the linked list.

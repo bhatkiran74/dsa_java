@@ -9,7 +9,8 @@ public class Demo {
         list.append(8);
         list.append(9);
         list.printList();
-        list.prepend(3);
+        list.removeFirst();
+        list.printList();
         list.append(10);
         list.printList();
     }
