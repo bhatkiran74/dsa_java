@@ -125,7 +125,12 @@ public class LinkedList {
         }
         return temp;
     }
-
+    /**
+     * Set the value of the node at the specified index in the linked list.
+     * @param index The index of the node to set the value.
+     * @param value The new value to assign to the node.
+     * @return True if the value is set successfully, false otherwise (if the index is out of bounds).
+     */
     boolean set(int index, int value){
         Node temp = get(index);
         if(temp !=null){
@@ -133,6 +138,33 @@ public class LinkedList {
             return true;
         }
         return false;
+    }
+
+    /**
+     * Insert a new node with the given value at the specified index in the linked list.
+     * @param value The value to be stored in the new node.
+     * @param index The index at which to insert the new node.
+     * @return True if the insertion is successful, false otherwise (if the index is out of bounds).
+     */
+    public boolean insert(int value, int index){
+        if(index<0 || index>length){
+            return false;
+        }
+
+        if(index == 0){
+            prepend(value);
+            return true;
+        }
+        if (length == index){
+            append(value);
+            return true;
+        }
+
+        Node newNode = new Node(value);
+        Node temp = get(index-1);
+        newNode.next = temp.next;
+        temp.next = newNode;
+        return true;
     }
 
     /**

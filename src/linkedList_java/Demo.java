@@ -17,5 +17,8 @@ public class Demo {
         list.printList();
         list.set(2,11);
         list.printList();
+
+        list.insert(10,2);
+        list.printList();
     }
 }
