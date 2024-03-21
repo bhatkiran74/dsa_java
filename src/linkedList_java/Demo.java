@@ -20,5 +20,7 @@ public class Demo {
 
         list.insert(10,2);
         list.printList();
+        list.remove(2);
+        list.printList();
     }
 }
