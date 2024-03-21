@@ -9,18 +9,8 @@ public class Demo {
         list.append(8);
         list.append(9);
         list.printList();
-        list.removeFirst();
-        list.printList();
-        list.append(10);
-        list.printList();
-        System.out.println(list.get(2).value);
-        list.printList();
-        list.set(2,11);
+        list.reverse();
         list.printList();
 
-        list.insert(10,2);
-        list.printList();
-        list.remove(2);
-        list.printList();
     }
 }
