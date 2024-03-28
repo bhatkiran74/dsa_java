@@ -49,11 +49,12 @@ public class DoublyLinkedList {
     // Method to print all the values in the doubly linked list
     void printList() {
         Node temp = head;
-        System.out.println();
+
         while (temp != null) {
             System.out.print(temp.value + " ");
             temp = temp.next;
         }
+        System.out.println();
     }
 
     // Method to append a new node with the given value to the end of the doubly linked list
@@ -70,9 +71,13 @@ public class DoublyLinkedList {
         length++;
     }
 
-    // Method to remove the last node from the doubly linked list and return it
-    // Created on: Friday, 29 March 2024
-    // Author: Kiransing bhat
+    /**
+     * Method to remove the last node from the doubly linked list and return it
+     *
+     * @return The removed node
+     * Created on: Friday, 29 March 2024
+     * Author: Kiransing bhat
+     */
     Node removeLast() {
         if (length == 0) {
             return null;
@@ -91,4 +96,27 @@ public class DoublyLinkedList {
         return temp;
     }
 
+    /**
+     * Method to remove the first node from the doubly linked list and return it
+     *
+     * @return The removed node
+     * Created on: Friday, 29 March 2024
+     * Author: Kiransing bhat
+     */
+    Node removeFirst() {
+        if (length == 0) {
+            return null;
+        }
+        Node temp = head;
+        if (length == 1) {
+            head = null;
+            tail = null;
+        } else {
+            head = head.next;
+            head.prev = null;
+            temp.next = null;
+        }
+        length--;
+        return temp;
+    }
 }
