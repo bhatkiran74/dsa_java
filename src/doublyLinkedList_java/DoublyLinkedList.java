@@ -70,6 +70,9 @@ public class DoublyLinkedList {
         length++;
     }
 
+    // Method to remove the last node from the doubly linked list and return it
+    // Created on: Friday, 29 March 2024
+    // Author: Kiransing bhat
     Node removeLast() {
         if (length == 0) {
             return null;
