@@ -10,5 +10,9 @@ public class Demo {
         list.getLength();
         list.printList();
 
+        list.append(20);
+        list.append(30);
+        list.printList();
+
     }
 }

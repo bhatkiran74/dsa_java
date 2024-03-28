@@ -1,8 +1,10 @@
 package linkedList_java;
 
 /**
- * LinkedList: A class representing a singly linked list.
- */
+ * LinkedList.java
+ * Author: Kiransing bhat
+ * Description: This class implements a singly linked list data structure in Java.
+ **/
 public class LinkedList {
     private Node head; // Reference to the first node in the linked list
     private Node tail; // Reference to the last node in the linked list
@@ -17,6 +19,7 @@ public class LinkedList {
 
         /**
          * Constructor to create a new node with a given value.
+         *
          * @param value The value to be stored in the node.
          */
         public Node(int value) {
@@ -26,6 +29,7 @@ public class LinkedList {
 
     /**
      * Constructor to initialize the linked list with a single node containing a given value.
+     *
      * @param value The value to be stored in the first node of the linked list.
      */
     public LinkedList(int value) {
@@ -37,6 +41,7 @@ public class LinkedList {
 
     /**
      * Append a new node with the given value to the end of the linked list.
+     *
      * @param value The value to be stored in the new node.
      */
     void append(int value) {
@@ -54,6 +59,7 @@ public class LinkedList {
 
     /**
      * Prepend a new node with the given value to the beginning of the linked list.
+     *
      * @param value The value to be stored in the new node.
      */
     void prepend(int value) {
@@ -70,6 +76,7 @@ public class LinkedList {
 
     /**
      * Remove and return the last node from the linked list.
+     *
      * @return The removed node or null if the list is empty.
      */
     Node removeLast() {
@@ -92,19 +99,21 @@ public class LinkedList {
         }
         return temp;
     }
+
     /**
      * Remove and return the first node from the linked list.
+     *
      * @return The removed node or null if the list is empty.
      */
-    Node removeFirst(){
+    Node removeFirst() {
         Node temp = head;
-        if (length==0){
+        if (length == 0) {
             return null;
         }
         head = head.next;
-        temp.next=null;
+        temp.next = null;
         length--;
-        if (length==0){
+        if (length == 0) {
             tail = null;
         }
         return temp;
@@ -112,6 +121,7 @@ public class LinkedList {
 
     /**
      * Retrieve the node at the specified index in the linked list.
+     *
      * @param index The index of the node to retrieve.
      * @return The node at the specified index, or null if the index is out of bounds.
      */
@@ -125,15 +135,17 @@ public class LinkedList {
         }
         return temp;
     }
+
     /**
      * Set the value of the node at the specified index in the linked list.
+     *
      * @param index The index of the node to set the value.
      * @param value The new value to assign to the node.
      * @return True if the value is set successfully, false otherwise (if the index is out of bounds).
      */
-    boolean set(int index, int value){
+    boolean set(int index, int value) {
         Node temp = get(index);
-        if(temp !=null){
+        if (temp != null) {
             temp.value = value;
             return true;
         }
@@ -142,26 +154,27 @@ public class LinkedList {
 
     /**
      * Insert a new node with the given value at the specified index in the linked list.
+     *
      * @param value The value to be stored in the new node.
      * @param index The index at which to insert the new node.
      * @return True if the insertion is successful, false otherwise (if the index is out of bounds).
      */
-    public boolean insert(int value, int index){
-        if(index<0 || index>length){
+    public boolean insert(int value, int index) {
+        if (index < 0 || index > length) {
             return false;
         }
 
-        if(index == 0){
+        if (index == 0) {
             prepend(value);
             return true;
         }
-        if (length == index){
+        if (length == index) {
             append(value);
             return true;
         }
 
         Node newNode = new Node(value);
-        Node temp = get(index-1);
+        Node temp = get(index - 1);
         newNode.next = temp.next;
         temp.next = newNode;
         return true;
@@ -169,24 +182,25 @@ public class LinkedList {
 
     /**
      * Remove the node at the specified index from the linked list.
+     *
      * @param index The index of the node to remove.
      * @return The removed node, or null if the index is out of bounds.
      */
-    public Node remove(int index){
-        if(index < 0||index>=length){
+    public Node remove(int index) {
+        if (index < 0 || index >= length) {
             return null;
         }
-        if(index==0){
+        if (index == 0) {
             return removeFirst();
         }
-        if (index==length-1){
+        if (index == length - 1) {
             return removeLast();
         }
-        Node prev = get(index-1);
+        Node prev = get(index - 1);
         Node temp = prev.next;
 
         prev.next = temp.next;
-        temp.next =null;
+        temp.next = null;
         length--;
         return temp;
     }
@@ -194,17 +208,17 @@ public class LinkedList {
     /**
      * Reverse the linked list.
      */
-    public void reverse(){
+    public void reverse() {
         Node temp = head;
         head = tail;
-        tail=temp;
+        tail = temp;
         Node after = temp.next;
         Node before = null;
         for (int i = 0; i < length; i++) {
             after = temp.next;
-            temp.next=before;
+            temp.next = before;
             before = temp;
-            temp=after;
+            temp = after;
         }
     }
 
