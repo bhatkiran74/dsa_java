@@ -212,5 +212,28 @@ public class DoublyLinkedList {
         length++;
         return true;
     }
-
+    /**
+     * Method to remove the node at the specified index from the doubly linked list
+     *
+     * @param index The index of the node to remove
+     * @return The removed node, or null if the index is out of bounds
+     * Created on: Sunday, 31 March 2024
+     * Author: Kiransing bhat
+     */
+    public Node remove(int index){
+        if (index <0 || index>=length)return null;
+        if (index==0){
+            return   removeFirst();
+        }
+        if (index==length-1){
+            return  removeLast();
+        }
+        Node temp =get(index);
+        temp.next.prev = temp.prev;
+        temp.prev.next = temp.next;
+        temp.next=null;
+        temp.prev=null;
+        length--;
+        return temp;
+    }
 }

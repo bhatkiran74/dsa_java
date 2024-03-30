@@ -13,9 +13,9 @@ public class Demo {
         list.append(70);
         list.append(80);
         list.printList();
-        list.insert(0,5);
-        list.insert(9,90);
-        list.insert(4,35);
+        list.remove(0);
+        list.remove(6);
+        list.remove(2);
         list.printList();
     }
 }
