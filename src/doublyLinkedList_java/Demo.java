@@ -13,12 +13,11 @@ public class Demo {
         list.append(30);
         list.append(40);
         list.append(50);
-        list.getLength();
+        list.append(60);
+        list.append(70);
+        list.append(80);
         list.printList();
-        list.removeFirst();
-        list.getLength();
-        list.printList();
-
+        System.out.println(list.get(5).value);
 
     }
 }

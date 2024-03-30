@@ -119,4 +119,31 @@ public class DoublyLinkedList {
         length--;
         return temp;
     }
+    /**
+     * Method to retrieve the node at the specified index in the doubly linked list
+     *
+     * @param index The index of the node to retrieve
+     * @return The node at the specified index, or null if the index is out of bounds
+     * Created on: Sunday, 31 March 2024
+     * Author: Kiransing bhat
+     */
+    public Node get(int index){
+        if (index <0 || index >=length){
+            return null;
+        }
+        Node temp = head;
+        if (index<length/2){
+            for (int i = 0;i<index;i++){
+                temp = temp.next;
+            }
+        }else {
+            temp = tail;
+            for (int i = length-1;i>index;i--){
+                temp = temp.prev;
+            }
+        }
+        return temp;
+    }
+
+
 }
