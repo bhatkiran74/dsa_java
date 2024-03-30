@@ -5,10 +5,6 @@ public class Demo {
 
         DoublyLinkedList list = new DoublyLinkedList(10);
 
-        list.getHead();
-        list.getTail();
-        list.getLength();
-        list.printList();
         list.append(20);
         list.append(30);
         list.append(40);
@@ -17,11 +13,9 @@ public class Demo {
         list.append(70);
         list.append(80);
         list.printList();
-        System.out.println(list.get(5).value);
-        list.set(5,600);
-        System.out.println(list.get(5).value);
-        list.printList();
-        list.preppend(5);
+        list.insert(0,5);
+        list.insert(9,90);
+        list.insert(4,35);
         list.printList();
     }
 }

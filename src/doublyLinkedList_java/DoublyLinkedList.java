@@ -166,7 +166,6 @@ public class DoublyLinkedList {
      * Method to prepend a new node with the given value to the beginning of the doubly linked list
      *
      * @param value The value to prepend
-     *
      * Created on: Sunday, 31 March 2024
      * Author: Kiransing bhat
      */
@@ -182,6 +181,36 @@ public class DoublyLinkedList {
         }
         length++;
     }
-
+    /**
+     * Method to insert a new node with the given value at the specified index in the doubly linked list
+     *
+     * @param index The index at which to insert the new node
+     * @param value The value to insert
+     * @return true if the node is successfully inserted, false otherwise
+     * Created on: Sunday, 31 March 2024
+     * Author: Kiransing bhat
+     */
+    public boolean insert(int index,int value){
+        if (index<0||index>length){
+            return false;
+        }
+        if (index ==0){
+            preppend(value);
+            return true;
+        }
+        if (index==length){
+            append(value);
+            return true;
+        }
+        Node newNode = new Node(value);
+        Node before = get(index-1);
+        Node after = before.next;
+        before.next = newNode;
+        newNode.next = after;
+        after.prev=newNode;
+        newNode.prev=before;
+        length++;
+        return true;
+    }
 
 }
