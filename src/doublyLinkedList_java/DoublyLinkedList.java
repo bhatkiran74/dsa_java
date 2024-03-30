@@ -145,5 +145,21 @@ public class DoublyLinkedList {
         return temp;
     }
 
-
+    /**
+     * Method to set the value of the node at the specified index in the doubly linked list
+     *
+     * @param index The index of the node to set the value
+     * @param value The new value to set
+     * @return true if the value is successfully set, false otherwise
+     * Created on: Sunday, 31 March 2024
+     * Author: Kiransing bhat
+     */
+    public boolean set(int index,int value){
+        Node temp = get(index);
+        if (temp!=null){
+            temp.value = value;
+            return true;
+        }
+        return false;
+    }
 }

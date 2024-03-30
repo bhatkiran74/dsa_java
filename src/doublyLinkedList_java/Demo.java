@@ -18,6 +18,8 @@ public class Demo {
         list.append(80);
         list.printList();
         System.out.println(list.get(5).value);
-
+        list.set(5,600);
+        System.out.println(list.get(5).value);
+        list.printList();
     }
 }
