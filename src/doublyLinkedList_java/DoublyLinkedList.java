@@ -162,4 +162,26 @@ public class DoublyLinkedList {
         }
         return false;
     }
+    /**
+     * Method to prepend a new node with the given value to the beginning of the doubly linked list
+     *
+     * @param value The value to prepend
+     *
+     * Created on: Sunday, 31 March 2024
+     * Author: Kiransing bhat
+     */
+    public void preppend(int value){
+        Node newNode = new Node(value);
+        if (length==0){
+            head = newNode;
+            tail = newNode;
+        }else {
+            newNode.next = head;
+            head.prev = newNode;
+            head = newNode;
+        }
+        length++;
+    }
+
+
 }

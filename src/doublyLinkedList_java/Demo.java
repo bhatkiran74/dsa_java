@@ -21,5 +21,7 @@ public class Demo {
         list.set(5,600);
         System.out.println(list.get(5).value);
         list.printList();
+        list.preppend(5);
+        list.printList();
     }
 }
