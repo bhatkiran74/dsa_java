@@ -32,5 +32,33 @@ public class Stack {
             top = top.next;
         }
     }
-
+    /**
+     * Print the value of the top node in the stack.
+     * This method prints the value of the node currently at the top of the stack.
+     */
+    public void getTop(){
+        System.out.println("Top of stack : "+top.value);
+    }
+    /**
+     * Print the height of the stack.
+     * This method prints the number of nodes currently present in the stack.
+     */
+    public void getHeight(){
+        System.out.println("Height of stack : "+height);
+    }
+    /**
+     * Push a new node with the given value onto the stack.
+     * This method adds a new node with the given value to the top of the stack.
+     * @param value The value to be stored in the new node.
+     */
+    public void push(int value){
+        Node newNode = new Node(value);
+        if (height==0){
+            top = newNode;
+        }else {
+            newNode.next = top;
+            top = newNode;
+        }
+        height++;
+    }
 }
