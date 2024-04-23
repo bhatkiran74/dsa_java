@@ -61,4 +61,20 @@ public class Stack {
         }
         height++;
     }
+    /**
+     * Remove and return the top node from the stack.
+     * This method removes the node currently at the top of the stack and returns it.
+     * If the stack is empty, it returns null.
+     * @return The node removed from the top of the stack, or null if the stack is empty.
+     */
+    public Node pop(){
+        if (height==0) return null;
+
+        Node temp = top;
+        top = top.next;
+        temp.next=null;
+        height--;
+        return temp;
+    }
+
 }
